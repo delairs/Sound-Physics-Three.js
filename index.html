@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics with Three.js - Sound Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Centering content */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Fullscreen canvas */
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+        "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Physics with Three.js - Sound Test</h1>
+  
+  <!-- Link ke file JavaScript utama -->
+  <script type="module" src="index.js"></script>
+</body>
+</html>
