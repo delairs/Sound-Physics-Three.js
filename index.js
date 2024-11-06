@@ -115,12 +115,12 @@ function updateMouseBall(mousePos) {
 
   bodies.forEach(body => {
     const distance = body.mesh.position.distanceTo(mouseBall.mesh.position);
-    if (distance < 0.5 && isAudioStarted && !ballTouchSound.isPlaying) {
-      ballTouchSound.play();
+    if (distance < 0.5 && isAudioStarted) {
+      ballTouchSound.stop();  // Stop sound jika sedang bermain
+      ballTouchSound.play();  // Mainkan ulang
     }
   });
 }
-
 
 // Fungsi untuk memeriksa tabrakan antar bola
 function checkBallCollisions() {
@@ -129,9 +129,8 @@ function checkBallCollisions() {
       const distance = bodies[i].mesh.position.distanceTo(bodies[j].mesh.position);
       if (distance < bodies[i].mesh.geometry.parameters.radius + bodies[j].mesh.geometry.parameters.radius) {
         // Memainkan suara saat bola bertabrakan
-        if (!ballCollisionSound.isPlaying) {
-          // ballCollisionSound.play();
-        }
+        ballCollisionSound.stop();  // Stop sound jika sedang bermain
+        ballCollisionSound.play();  // Mainkan ulang
       }
     }
   }
@@ -145,7 +144,7 @@ function updateBallReturn() {
     
     const dist = pos.distanceTo(new THREE.Vector3(0, 0, 0));
     if (dist > 5 && !ballReturnSound.isPlaying) {
-      // ballReturnSound.play();
+      ballReturnSound.play();
       body.rigid.setTranslation(0, 0, 0, true);
     }
   });
